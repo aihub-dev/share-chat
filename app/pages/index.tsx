@@ -140,11 +140,13 @@ export default function Home({
 export async function getStaticProps() {
   // const totalConvos = await prisma.conversation.count();
   // const topConvos = await getConvos({ orderBy: "views", take: 10 });
+  const totalConvos = 0;
+  const topConvos: ConversationMeta[] = []
   return {
-    // props: {
-    //   totalConvos,
-    //   topConvos,
-    // },
+    props: {
+      totalConvos,
+      topConvos,
+    },
     revalidate: 60,
   };
 }
