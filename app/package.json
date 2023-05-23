@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "migrate": "prisma migrate dev --schema ./prisma/schema.prisma",
     "update-db": "prisma migrate deploy",
     "build-db-schema": "prisma db pull",
     "prebuild": "prisma generate",
