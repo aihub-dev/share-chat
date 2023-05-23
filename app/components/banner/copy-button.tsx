@@ -31,7 +31,7 @@ export default function CopyButton() {
       ) : (
         <LinkIcon className="h-4 w-4 text-gray-600" />
       )}
-      <p className="text-center text-gray-600 text-sm">Copy</p>
+      <p className="text-center text-gray-600 text-sm">复制链接</p>
     </button>
   );
 }

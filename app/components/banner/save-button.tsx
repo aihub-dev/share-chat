@@ -93,7 +93,7 @@ export default function SaveButton({ id }: { id: string }) {
             </p>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Save this conversation to your account. Login required.</p>
+            <p>想要保存对话到你的账户需要先登录</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

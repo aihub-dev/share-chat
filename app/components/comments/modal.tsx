@@ -103,7 +103,7 @@ const CommentModal = ({
               </h2>
             </button>
           ) : (
-            <h2 className="text-xl font-medium text-gray-600 p-2">Comments</h2>
+            <h2 className="text-xl font-medium text-gray-600 p-2">评论</h2>
           )}
           <button
             onClick={() =>
@@ -140,13 +140,13 @@ const CommentModal = ({
                   src="/illustrations/empty.svg"
                   width={200}
                   height={200}
-                  alt="No comments yet"
+                  alt="还没有评论"
                 />
                 <h2 className="text-xl font-medium text-gray-600">
-                  No comments yet
+                  还没有评论
                 </h2>
                 <p className="text-sm text-gray-500">
-                  Be the first to comment on this conversation
+                  来抢一下沙发吧
                 </p>
               </div>
             )}
@@ -174,7 +174,7 @@ const CommentModal = ({
             <textarea
               name="comment"
               className="w-full h-full resize-none text-sm text-gray-600 placeholder:text-gray-400 focus:outline-none border-none focus:ring-0"
-              placeholder={position ? "Write a comment..." : "Write a reply..."}
+              placeholder={position ? "写下你的评论..." : "写下你的回复..."}
               rows={6}
               required
               onKeyDown={handleKeyDown}

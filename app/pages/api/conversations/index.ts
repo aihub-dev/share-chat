@@ -73,29 +73,30 @@ export default async function handler(
 ) {
   // GET /api/conversations (for fetching conversations) - disabled for now
   if (req.method === "GET") {
-    try {
-      const token = req.headers["authorization"]?.split(" ")[1];
-      if (!token) return res.status(401).json({ message: "Unauthorized" });
-      const decoded = verify(token, process.env.JWT_SECRET as string);
-      if (!decoded) return res.status(401).json({ message: "Unauthorized" });
+    return res.status(401).json({ message: "Unauthorized" });
+    // try {
+    //   const token = req.headers["authorization"]?.split(" ")[1];
+    //   if (!token) return res.status(401).json({ message: "Unauthorized" });
+    //   const decoded = verify(token, process.env.JWT_SECRET as string);
+    //   if (!decoded) return res.status(401).json({ message: "Unauthorized" });
 
-      const { type, page, search } = req.query as {
-        type: string;
-        page?: string;
-        search?: string;
-      };
+    //   const { type, page, search } = req.query as {
+    //     type: string;
+    //     page?: string;
+    //     search?: string;
+    //   };
 
-      const response = await getConvos({
-        orderBy: type === "new" ? "createdAt" : "views",
-        take: PAGINATION_LIMIT,
-        skip: page ? parseInt(page) * 50 : 0,
-        search,
-      });
+    //   const response = await getConvos({
+    //     orderBy: type === "new" ? "createdAt" : "views",
+    //     take: PAGINATION_LIMIT,
+    //     skip: page ? parseInt(page) * 50 : 0,
+    //     search,
+    //   });
 
-      res.status(200).json(response);
-    } catch (error) {
-      return res.status(401).json({ message: "Unauthorized" });
-    }
+    //   res.status(200).json(response);
+    // } catch (error) {
+    //   return res.status(401).json({ message: "Unauthorized" });
+    // }
   }
 
   // OPTIONS /api/conversations (for CORS)

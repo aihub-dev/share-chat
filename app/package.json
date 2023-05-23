@@ -9,7 +9,7 @@
     "migrate": "prisma migrate dev --schema ./prisma/schema.prisma",
     "update-db": "prisma migrate deploy",
     "build-db-schema": "prisma db pull",
-    "prebuild": "prisma generate && npm run migrate",
+    "prebuild": "prisma generate",
     "predev": "prisma generate",
     "start": "next start"
   },

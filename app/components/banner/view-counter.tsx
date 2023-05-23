@@ -20,7 +20,7 @@ export default function ViewCounter({ views }: { views: number }) {
           </div>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Number of times this conversation has been viewed</p>
+          <p>对话被查看的次数</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

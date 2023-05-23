@@ -6,21 +6,22 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const { search } = req.query as {
-      search?: string;
-    };
+    return res.status(401).json({ message: "Unauthorized" });
+    // const { search } = req.query as {
+    //   search?: string;
+    // };
 
-    const response = await prisma.conversation.count({
-      ...(search && {
-        where: {
-          title: {
-            search: search,
-          },
-        },
-      }),
-    });
+    // const response = await prisma.conversation.count({
+    //   ...(search && {
+    //     where: {
+    //       title: {
+    //         search: search,
+    //       },
+    //     },
+    //   }),
+    // });
 
-    res.status(200).json(response);
+    // res.status(200).json(response);
   } else {
     res.status(405).json({ error: "Method not allowed" });
   }

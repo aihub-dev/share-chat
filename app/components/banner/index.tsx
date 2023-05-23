@@ -34,22 +34,22 @@ export default function Banner({ views }: { views: number }) {
               className="flex space-x-2 items-center justify-center font-medium text-gray-600 px-4 py-1.5 rounded-md hover:bg-gray-100 active:bg-gray-200 transition-all"
             >
               <Image
-                alt="ShareGPT logo"
+                alt="AIHub logo"
                 src="/logo.svg"
                 width={20}
                 height={20}
                 className="rounded-sm"
               />
-              <p>ShareGPT</p>
+              <p>分享AI对话</p>
             </Link>
-            <Link
+            {/* <Link
               href="https://vercel.com?utm_source=sharegpt&utm_campaign=oss"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-500 hover:text-gray-800 px-3"
             >
               Powered by ▲Vercel
-            </Link>
+            </Link> */}
           </div>
           <div className="border-l border-gray-200 h-12 w-1" />
           <CopyButton />
