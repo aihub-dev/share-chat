@@ -40,9 +40,9 @@ export default function Layout({
               height="30"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>ShareGPT</p>
+            <p>分享AI对话</p>
           </Link>
-          <div>
+          {/* <div>
             <AnimatePresence>
               {!session && status !== "loading" ? (
                 <motion.button
@@ -50,13 +50,13 @@ export default function Layout({
                   onClick={() => setShowSignInModal(true)}
                   {...FADE_IN_ANIMATION_SETTINGS}
                 >
-                  Sign In
+                  登录
                 </motion.button>
               ) : (
                 <UserDropdown />
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
         </div>
       </div>
       {children}

@@ -28,7 +28,7 @@ export default function Banner({ views }: { views: number }) {
         >
           <div className="w-40 flex flex-col items-center justify-center">
             <Link
-              href="https://sharegpt.com"
+              href="https://aihub.life"
               target="_blank"
               rel="noopener noreferrer"
               className="flex space-x-2 items-center justify-center font-medium text-gray-600 px-4 py-1.5 rounded-md hover:bg-gray-100 active:bg-gray-200 transition-all"
