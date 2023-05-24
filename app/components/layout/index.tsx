@@ -40,7 +40,7 @@ export default function Layout({
               height="30"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>分享AI对话</p>
+            <p>分享创意</p>
           </Link>
           {/* <div>
             <AnimatePresence>

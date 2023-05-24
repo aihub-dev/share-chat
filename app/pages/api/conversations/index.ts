@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "@/lib/auth";
-import { getConvos } from "@/lib/api";
+// import { getConvos } from "@/lib/api";
 import { ratelimit, redis } from "@/lib/upstash";
 import sanitizeHtml from "sanitize-html";
-import { verify } from "jsonwebtoken";
-import { PAGINATION_LIMIT } from "@/lib/constants";
+// import { verify } from "jsonwebtoken";
+// import { PAGINATION_LIMIT } from "@/lib/constants";
 import prisma from "@/lib/prisma";
 import { nanoid, truncate } from "@/lib/utils";
 import { ConversationProps } from "@/lib/types";
@@ -106,7 +106,7 @@ export default async function handler(
     // POST /api/conversations (for saving conversations)
   } else if (req.method === "POST") {
     try {
-      const { success } = await ratelimit.limit("sharegpt-save-endpoint");
+      const { success } = await ratelimit.limit("AIHub-save-endpoint");
       if (!success) {
         return res.status(429).json({ error: "Don't DDoS me pls 🥺" });
       }
@@ -142,7 +142,7 @@ async function setRandomKey(
       : "Untitled";
   }
 
-  const avatar = content?.avatarUrl || `https://avatar.vercel.sh/${id}`;
+  const avatar = content?.avatarUrl;
   try {
     await prisma.conversation.create({
       data: {

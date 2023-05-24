@@ -18,8 +18,8 @@ export default function CopyButton() {
     <button
       ref={copyRef}
       onClick={() =>
-        navigator.clipboard.writeText(`https://shareg.pt/${id}`).then(() => {
-          toast.success("Link copied to clipboard");
+        navigator.clipboard.writeText(`https://s.aihub.life/c/${id}`).then(() => {
+          toast.success("链接已复制成功");
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         })
@@ -31,7 +31,7 @@ export default function CopyButton() {
       ) : (
         <LinkIcon className="h-4 w-4 text-gray-600" />
       )}
-      <p className="text-center text-gray-600 text-sm">复制链接</p>
+      <p className="text-center text-gray-600 text-sm">分享</p>
     </button>
   );
 }

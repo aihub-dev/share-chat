@@ -9,6 +9,7 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/lib/*": ["lib/*"],
+      "@/mono/*": ["mono/*"],
       "@/styles/*": ["styles/*"]
     },
     "strict": true,

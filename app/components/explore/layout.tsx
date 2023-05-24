@@ -28,16 +28,16 @@ export default function ExploreLayout({
   children: ReactNode;
 }) {
   const router = useRouter();
-  const description = `Discover ${Intl.NumberFormat("en-us").format(
+  const description = `探索 ${Intl.NumberFormat("en-us").format(
     totalConvos
-  )} ${type} ChatGPT conversations shared via ShareGPT.`;
+  )} ${type} 通过AIHub分享创意`;
 
   return (
     <Layout
       meta={{
-        title: `Explore ${
-          type === "top" ? "Top" : "New"
-        } Conversations on ShareGPT`,
+        title: `发现 ${
+          type === "top" ? "最热" : "最新"
+        } AIHub创意`,
         description,
         canonical: `https://aihub.life/explore${
           type === "top" ? "" : "/new"
@@ -47,14 +47,14 @@ export default function ExploreLayout({
       <div className="flex flex-col items-center pt-28 bg-gray-50">
         <div className="flex flex-col items-center space-y-8 text-center mx-5 sm:mx-auto">
           <h1 className="font-display tracking-tight font-bold text-4xl text-gray-800 transition-colors sm:text-7xl">
-            Explore
+            发现
           </h1>
           <p className="max-w-xl text-gray-600 transition-colors sm:text-lg">
-            Discover{" "}
+            探索{" "}
             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               {Intl.NumberFormat("en-us").format(totalConvos)}
             </span>{" "}
-            {type} ChatGPT conversations shared via ShareGPT.
+            {type} 通过AIHub分享创意
           </p>
         </div>
         {/* Tabs */}

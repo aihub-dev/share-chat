@@ -2,10 +2,10 @@ import Head from "next/head";
 const FAVICON_FOLDER = "/favicons";
 
 export default function Meta({
-  title = `ShareGPT: Share your wildest ChatGPT conversations with one click.`,
-  description = `ShareGPT is a Chrome extension that allows you to share your wildest ChatGPT conversations with one click.`,
+  title = `AIHub: Share your wildest ChatGPT conversations with one click.`,
+  description = `AIHub is a Chrome extension that allows you to share your wildest ChatGPT conversations with one click.`,
   image = "https://aihub.life/thumbnail.png",
-  imageAlt = "OG image for the ShareGPT application",
+  imageAlt = "OG image for the AIHub application",
   canonical = "https://aihub.life",
 }: {
   title?: string;

@@ -57,15 +57,13 @@ export default function DeleteInfoModal({
                 </div>
                 <div className="mt-3 text-center sm:ml-4 sm:mt-1 sm:text-left">
                   <h3 className="font-semibold text-xl leading-6 text-gray-900">
-                    Introducing Deletes
+                    介绍删除功能
                   </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      ShareGPT convos are private by default and only accessible
-                      by a direct link. They are not indexed on Google, unless
-                      they exceed 100 views. <br /> <br /> If you still want to
-                      delete this conversation, you can do so within the next 60
-                      seconds.
+                      AIHub 默认情况下，对话是不公开的，只能通过直接链接访问. 
+                      它们不会被搜索引擎收录，除非它们超过100次浏览. <br /> <br />
+                      如果你仍然想要删除这段对话，你可以在60秒内操作
                     </p>
                   </div>
                 </div>
@@ -77,7 +75,7 @@ export default function DeleteInfoModal({
                 className="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black transition-all border border-black sm:ml-3 sm:w-auto"
                 onClick={() => setShowModal(false)}
               >
-                Okay, got it!
+                好的，我了解了！
               </button>
               <button
                 type="button"
@@ -87,7 +85,7 @@ export default function DeleteInfoModal({
                   setShowModal(false);
                 }}
               >
-                Do not show me again
+                我不想看到这个提示了
               </button>
             </div>
           </div>

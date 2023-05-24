@@ -31,15 +31,15 @@ export default function Home({
         >
           <Twitter className="h-5 w-5 text-[#1d9bf0]" />
           <p className="text-sm font-semibold text-[#1d9bf0]">
-            Introducing ShareGPT
+            Introducing AIHub
           </p>
         </Link> */}
         <div className="flex flex-col items-center space-y-8 text-center mx-5 sm:mx-auto">
           <h1 className="font-display tracking-tight font-bold text-4xl text-gray-800 transition-colors sm:text-7xl">
-            分享AI对话
+            分享创意
           </h1>
           <p className="max-w-lg text-gray-600 transition-colors sm:text-lg">
-            一键分享你跟AI的创意对话
+            ✨一键分享你创意创造过程
             <br />
             {/* <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               {Intl.NumberFormat("en-us").format(totalConvos)}

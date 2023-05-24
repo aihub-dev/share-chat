@@ -1,6 +1,6 @@
 {
-  "name": "ShareGPT: Share your ChatGPT conversations",
-  "description": "ShareGPT is a Chrome extension that lets you your wildest ChatGPT conversations with one click.",
+  "name": "AIHub: Share your ChatGPT conversations",
+  "description": "AIHub is a Chrome extension that lets you your wildest ChatGPT conversations with one click.",
   "version": "1.0.97",
   "manifest_version": 3,
   "icons": {
@@ -16,7 +16,7 @@
       "48": "assets/icons/icon48.png",
       "128": "assets/icons/icon128.png"
     },
-    "default_title": "Login to ShareGPT",
+    "default_title": "Login to AIHub",
     "default_popup": "popup.html"
   },
   "content_scripts": [

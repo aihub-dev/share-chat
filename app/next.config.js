@@ -81,7 +81,8 @@ const nextConfig = {
       {
         source: "/extension",
         destination:
-          "https://chrome.google.com/webstore/detail/sharegpt/daiacboceoaocpibfodeljbdfacokfjb?hl=en&authuser=0",
+          "https://seigy6zzam.feishu.cn/wiki/wikcno7UUwdsePEAg0EPFuInYBf",
+          // "https://chrome.google.com/webstore/detail/AIHub/daiacboceoaocpibfodeljbdfacokfjb?hl=en&authuser=0",
         permanent: false,
       },
       {
@@ -92,13 +93,13 @@ const nextConfig = {
       },
       {
         source: "/github",
-        destination: "https://github.com/domeccleston/sharegpt",
+        destination: "https://github.com/domeccleston/AIHub",
         permanent: false,
       },
       {
         source: "/mentions",
         destination:
-          "https://twitter.com/search?q=shareg.pt%20-from%3Asteventey&src=typed_query&f=top", // show ShareGPT mentions on Twitter that are not from @steventey
+          "https://twitter.com/search?q=aihub.life%20-from%3Asteventey&src=typed_query&f=top", // show AIHub mentions on Twitter that are not from @steventey
         permanent: false,
       },
       {
@@ -106,7 +107,7 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "shareg.pt",
+            value: "aihub.life",
           },
         ],
         destination: "https://aihub.life",
@@ -117,10 +118,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "shareg.pt",
+            value: "aihub.life",
           },
         ],
-        destination: "https://aihub.life/c/:path*",
+        destination: "https://s.aihub.life/c/:path*",
         permanent: false,
       },
     ];

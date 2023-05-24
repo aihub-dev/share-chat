@@ -3,7 +3,7 @@ import Image from "next/image";
 import prisma from "@/lib/prisma";
 import { ParsedUrlQuery } from "node:querystring";
 import cn from "classnames";
-import GPTAvatar from "@/components/shared/icons/GPTAvatar";
+import getGPTAvatar from "@/components/shared/icons/GPTAvatar";
 import styles from "@/styles/utils.module.css";
 import Banner from "@/components/banner";
 import Meta from "@/components/layout/meta";
@@ -15,8 +15,10 @@ import { useCommentModal } from "@/components/comments/modal";
 import { useRouter } from "next/router";
 import { useEffect, useMemo } from "react";
 import useSWR from "swr";
+import Markdown from "@/mono/Markdown";
 import { fetcher } from "@/lib/utils";
 import { getConvo } from "@/lib/api";
+import { USER_AVATAR_URI } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { FADE_IN_ANIMATION_SETTINGS } from "@/lib/constants";
 
@@ -25,8 +27,8 @@ interface ChatParams extends ParsedUrlQuery {
 }
 function formatTitle(title: string | undefined): string {
   if (!title || title === "New chat")
-    return "Check out this ShareGPT conversation";
-  else return `${title} -  A ShareGPT conversation`;
+    return "Check out this AI and human conversation";
+  else return `${title} -  A AIHub conversation`;
 }
 
 export default function ChatPage({
@@ -73,18 +75,36 @@ export default function ChatPage({
     <>
       <Meta
         title={formatTitle(title)}
-        description={`This is a conversation between a human and a GPT-3 chatbot. The human first asks: ${items[0]?.value}. The GPT-3 chatbot then responds: ${items[1]?.value}`}
+        description={`This is a conversation between a human and a GPT chatbot. The human first asks: ${items[0]?.value}. The GPT chatbot then responds: ${items[1]?.value}`}
         image={`https://aihub.life/api/conversations/${id}/thumbnail`}
-        imageAlt={`This is a preview image for a conversation betwen a human and a GPT-3 chatbot. The human first asks: ${items[0]?.value}. The GPT-3 chatbot then responds: ${items[1]?.value}`}
-        canonical={`https://aihub.life/c/${id}`}
+        imageAlt={`This is a preview image for a conversation betwen a human and a GPT chatbot. The human first asks: ${items[0]?.value}. The GPT chatbot then responds: ${items[1]?.value}`}
+        canonical={`https://s.aihub.life/c/${id}`}
       />
       <CommentModal />
       <Toaster />
+      {/* TODO: Render Title */}
       <div className="flex flex-col items-center pb-24 dark:bg-[#343541] min-h-screen">
         {model ? (
-          <div className="bg-gray-100 dark:bg-[#434654] w-full text-center text-gray-500 dark:text-gray-300 p-3">
-            {model}
-          </div>
+          <a
+            className="flex justify-center items-center bg-gray-100 dark:bg-[#434654] w-full text-center text-gray-500 dark:text-gray-300 p-3"
+            href="https://aihub.life"
+            target="_blank"
+          >
+            <Image
+              alt="AIHub logo"
+              src="/logo.png"
+              width={28}
+              height={28}
+              className="rounded-sm mr-3 absolute left-4"
+            />
+            这是我跟
+            <Image
+              className="mx-2 rounded-sm h-[14px]"
+              alt="Avatar of the person chatting"
+              height="14"
+              src={getGPTAvatar({ model })}
+            />配合产出的创意✨
+          </a>
         ) : null}
         {items.map((item, idx) => (
           <div
@@ -113,19 +133,27 @@ export default function ChatPage({
                     alt="Avatar of the person chatting"
                     width="28"
                     height="28"
-                    src={avatarUrl || `https://avatar.vercel.sh/${id}`}
+                    src={avatarUrl || USER_AVATAR_URI}
                   />
                 ) : (
-                  <GPTAvatar model={model} />
+                  <Image
+                    className="mr-2 rounded-sm h-[28px]"
+                    alt="Avatar of the person chatting"
+                    width="28"
+                    height="28"
+                    src={getGPTAvatar({ model })}
+                  />
+                  // <GPTAvatar model={model} />
                 )}
                 <div className="flex flex-col">
                   {item.from === "human" ? (
                     <p className="pb-2 whitespace-prewrap">{item.value}</p>
                   ) : (
-                    <div
-                      className={styles.response}
-                      dangerouslySetInnerHTML={{ __html: item.value }}
-                    />
+                    // <div
+                    //   className={styles.response}
+                    //   dangerouslySetInnerHTML={{ __html: item.value }}
+                    // />
+                    <Markdown>{item.value}</Markdown>
                   )}
                 </div>
               </div>

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { convert } from "html-to-text";
 import { ConversationProps } from "@/lib/types";
 import { conn } from "@/lib/planetscale";
+import { USER_AVATAR_URI } from "@/lib/constants";
 
 export const config = {
   runtime: "edge",
@@ -50,7 +51,7 @@ export default async function handler(req: NextRequest) {
         <div tw="flex p-10 bg-[#343541] w-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={avatarUrl}
+            src={avatarUrl || USER_AVATAR_URI}
             width="48"
             height="48"
             alt="avatar"
@@ -111,7 +112,7 @@ export default async function handler(req: NextRequest) {
               marginTop: "25px",
             }}
           >
-            shareg.pt
+            aihub.life
           </p>
         </div>
       </div>

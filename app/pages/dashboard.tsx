@@ -15,7 +15,7 @@ export default function Dashboard({ convos }: { convos: ConversationMeta[] }) {
             Saved Conversations
           </h1>
           <p className="max-w-lg text-gray-600 transition-colors sm:text-lg">
-            List of all your saved conversations on ShareGPT, sorted by saved
+            List of all your saved conversations on AIHub, sorted by saved
             date.
           </p>
         </div>

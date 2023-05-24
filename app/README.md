@@ -9,14 +9,14 @@ Frontend for ChatGPT Share. To start sharing ChatGPT conversations, visit https:
 
 ```bash
     export DATABASE_URL="mysql://user:password@host:port/database"
-    npx prisma migrate dev --schema sharegpt-app/prisma/schema.prisma
+    npx prisma migrate dev --schema AIHub-app/prisma/schema.prisma
 ```
 
 3. Copy the .env.example file to .env and fill in the values
-4. Install dependencies in the sharegpt-app
+4. Install dependencies in the AIHub-app
 
 ```bash
-cd sharegpt-app
+cd AIHub-app
 yarn
 ```
 
@@ -25,9 +25,3 @@ yarn
 ```bash
     yarn dev
 ```
-
-
-
-
-
-

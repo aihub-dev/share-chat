@@ -1,6 +1,6 @@
 <a href="https://aihub.life">
-  <img alt="ShareGPT – Share your wildest ChatGPT conversations with one click." src="https://user-images.githubusercontent.com/28986134/207940414-b2314f7c-de04-4007-bc76-2ebb9d4f993c.png">
-  <h1 align="center">ShareGPT</h1>
+  <img alt="AIHub – Share your wildest ChatGPT conversations with one click." src="https://user-images.githubusercontent.com/28986134/207940414-b2314f7c-de04-4007-bc76-2ebb9d4f993c.png">
+  <h1 align="center">AIHub</h1>
 </a>
 
 <p align="center">
@@ -8,11 +8,11 @@
 </p>
 
 <p align="center">
-  <a href="https://twitter.com/ShareGPT">
-    <img src="https://img.shields.io/twitter/follow/sharegpt?style=flat&label=%40dubdotsh&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
+  <a href="https://twitter.com/AIHub">
+    <img src="https://img.shields.io/twitter/follow/AIHub?style=flat&label=%40dubdotsh&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
   </a>
-  <a href="https://github.com/domeccleston/sharegpt/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/domeccleston/sharegpt?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
+  <a href="https://github.com/domeccleston/AIHub/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/domeccleston/AIHub?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
   </a>
 </p>
 
@@ -25,7 +25,7 @@
 
 ## Introduction
 
-ShareGPT is an open-source Chrome Extension for you to share your wildest ChatGPT conversations with one click.
+AIHub is an open-source Chrome Extension for you to share your wildest ChatGPT conversations with one click.
 
 ### Features
 
@@ -36,7 +36,7 @@ ShareGPT is an open-source Chrome Extension for you to share your wildest ChatGP
 
 ## Tech Stack
 
-ShareGPT is built with the following stack:
+AIHub is built with the following stack:
 
 - [Next.js](https://nextjs.org/) – framework
 - [Typescript](https://www.typescriptlang.org/) – language
@@ -48,7 +48,7 @@ ShareGPT is built with the following stack:
 
 ## REST API
 
-The ShareGPT API is a REST-styled API that allows you to write and read conversations from our database, exposed as HTTP endpoints.
+The AIHub API is a REST-styled API that allows you to write and read conversations from our database, exposed as HTTP endpoints.
 
 ### Conversations Endpoint
 
@@ -57,7 +57,7 @@ The ShareGPT API is a REST-styled API that allows you to write and read conversa
 You can use this endpoint to add new conversations to our database.
 
 <details>
-<summary>First, if you haven't already, process the ShareGPT conversation using the following code:</summary>
+<summary>First, if you haven't already, process the AIHub conversation using the following code:</summary>
 
 ```ts
 function conversationData() {
@@ -129,12 +129,12 @@ This will return an object with an `id` attribute which will be the unique ident
 
 ```ts
 const { id } = await res.json();
-const url = `https://shareg.pt/${id}`; // short link to the ShareGPT post
+const url = `https://aihub.life/${id}`; // short link to the AIHub post
 ```
 
 #### GET: `https://aihub.life/api/conversations`
 
-*PLEASE NOTE:* This endpoint is currently disabled due to excess traffic.
+_PLEASE NOTE:_ This endpoint is currently disabled due to excess traffic.
 
 This endpoint takes 3 optional query parameters:
 
@@ -169,9 +169,9 @@ interface ConversationMeta {
   id: string; // unique id for the conversation
   title: string; // title of the conversation (first user prompt)
   avatar: string; // base64 encoded URI of the user's avatar
-  saves: number; // number of times the conversation is saved on ShareGPT
-  comments: number; // number of comments the conversation has on ShareGPT
-  views: number; // number of times the conversation has been viewed on ShareGPT
+  saves: number; // number of times the conversation is saved on AIHub
+  comments: number; // number of comments the conversation has on AIHub
+  views: number; // number of times the conversation has been viewed on AIHub
   createdAt: Date; // timestamp when the conversation was creataed
 }
 [];

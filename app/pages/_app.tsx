@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/highlight.css";
+import "../mono/Markdown/markdown.css";
 import type { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";

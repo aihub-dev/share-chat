@@ -1,6 +1,13 @@
 import cn from "classnames";
+import poeChatgptLogo from '@/components/shared/assets/poe-logo.svg'
+import chatgptLogo from '@/components/shared/assets/chatgpt-logo.svg'
+import chatgptapiLogo from '@/components/shared/assets/chatgpt-api-logo.svg'
+import bingLogo from '@/components/shared/assets/bing-logo.svg'
+import bardLogo from '@/components/shared/assets/bard-logo.svg'
+import claudeLogo from '@/components/shared/assets/anthropic-logo.svg'
+import sparkLogo from '@/components/shared/assets/spark-logo.svg'
 
-export default function GPTAvatar({ model }: { model?: string }) {
+function GPTAvatar({ model }: { model?: string }) {
   return (
     <div
       className={cn(
@@ -24,4 +31,28 @@ export default function GPTAvatar({ model }: { model?: string }) {
       </svg>
     </div>
   );
+}
+
+export enum BotId {
+  CHATGPT = 'chatgpt',
+  POECHATGPT = 'poe-chatgpt',
+  CHATGPTAPI = 'chatgpt-api',
+  BING = 'bing',
+  BARD = 'bard',
+  CLAUDE = 'claude',
+  SPARK = 'spark',
+}
+
+const BotMap = {
+  [BotId.POECHATGPT]: poeChatgptLogo,
+  [BotId.CHATGPT]: chatgptLogo,
+  [BotId.CHATGPTAPI]: chatgptapiLogo,
+  [BotId.BING]: bingLogo,
+  [BotId.BARD]: bardLogo,
+  [BotId.CLAUDE]: claudeLogo,
+  [BotId.SPARK]: sparkLogo,
+}
+
+export default function getGPTAvatar({ model }: { model?: string }) {
+  return BotMap[model as BotId] || chatgptLogo;
 }

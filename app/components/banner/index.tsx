@@ -35,15 +35,15 @@ export default function Banner({ views }: { views: number }) {
             >
               <Image
                 alt="AIHub logo"
-                src="/logo.svg"
+                src="/logo.png"
                 width={20}
                 height={20}
                 className="rounded-sm"
               />
-              <p>分享AI对话</p>
+              <p>分享创意</p>
             </Link>
             {/* <Link
-              href="https://vercel.com?utm_source=sharegpt&utm_campaign=oss"
+              href="https://vercel.com?utm_source=AIHub&utm_campaign=oss"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-gray-500 hover:text-gray-800 px-3"

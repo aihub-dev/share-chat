@@ -45,7 +45,8 @@ export default function DeleteButton() {
   useEffect(() => {
     if (!Cookies.get("dismissedDeleteButtonModal") && ttl > 0) {
       ref?.current?.focus();
-      setShowModal(true);
+      // TODO：后面多了可以加回来
+      // setShowModal(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -74,10 +75,10 @@ export default function DeleteButton() {
             ) : (
               <Trash className="h-4 w-4 text-gray-600" />
             )}
-            <p className="text-center text-gray-600 text-sm">{ttl}s</p>
+            <p className="text-center text-gray-600 text-sm">{ttl}秒</p>
           </TooltipTrigger>
           <TooltipContent>
-            <p>You have {ttl}s remaining to delete this conversation</p>
+            <p>你还有 {ttl}秒可以删除这段对话</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
