@@ -1,16 +1,24 @@
+export interface ContentProps {
+  title?: string;
+  avatarUrl?: string;
+  model?: string;
+  role?: string;
+  roleAvatar?: {
+    isUrl: boolean // 是不是图片
+    url: string
+  };
+  items: {
+    from: "human" | "gpt";
+    value: string;
+  }[];
+}
+
 export interface ConversationProps {
   id: string;
   model?: string;
-  content: {
-    title?: string;
-    avatarUrl: string;
-    model?: string;
-    role?: string;
-    items: {
-      from: "human" | "gpt";
-      value: string;
-    }[];
-  };
+  title?: string;
+  avatar?: string;
+  content: ContentProps;
   comments: CommentProps[];
   views: number;
 }

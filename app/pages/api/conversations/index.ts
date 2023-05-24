@@ -7,7 +7,7 @@ import sanitizeHtml from "sanitize-html";
 // import { PAGINATION_LIMIT } from "@/lib/constants";
 import prisma from "@/lib/prisma";
 import { nanoid, truncate } from "@/lib/utils";
-import { ConversationProps } from "@/lib/types";
+import { ConversationProps, ContentProps } from "@/lib/types";
 
 const options = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(["svg"]),
@@ -152,7 +152,8 @@ async function setRandomKey(
         content: {
           items: content.items,
           model: content.model,
-          role: content.role,
+          ...content.role && { role: content.role },
+          ...content.roleAvatar && { roleAvatar: content.roleAvatar },
         },
         ...(userId && { userId }),
       },

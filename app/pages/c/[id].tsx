@@ -33,7 +33,9 @@ function formatTitle(title: string | undefined): string {
 
 export default function ChatPage({
   id,
-  content: { title, avatarUrl, items, model, role },
+  title,
+  avatar,
+  content: { items, model, role, roleAvatar },
   comments: initialComments,
   views,
 }: ConversationProps) {
@@ -98,7 +100,9 @@ export default function ChatPage({
               height={28}
               className="rounded-sm mr-3 absolute left-4"
             />
-            这是我跟{role ? `【${role}】角色的` : ''}
+            <span className="mr-1">这是我跟</span>
+            {roleAvatar ? roleAvatar.url : ''}
+            {role ? `【${role}】角色的` : ''}
             <Image
               className="mx-2 rounded-sm h-[14px]"
               alt="Avatar of the person chatting"
@@ -134,7 +138,7 @@ export default function ChatPage({
                     alt="Avatar of the person chatting"
                     width="28"
                     height="28"
-                    src={avatarUrl || USER_AVATAR_URI}
+                    src={avatar || USER_AVATAR_URI}
                   />
                 ) : (
                   <Image
@@ -200,7 +204,7 @@ export const getStaticProps = async (
   const { id } = context.params;
 
   const props = await getConvo(id);
-
+  debugger
   if (props) {
     return { props, revalidate: 3600 };
   } else {
