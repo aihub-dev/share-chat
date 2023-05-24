@@ -2,8 +2,8 @@ import Head from "next/head";
 const FAVICON_FOLDER = "/favicons";
 
 export default function Meta({
-  title = `AIHub: Share your wildest ChatGPT conversations with one click.`,
-  description = `AIHub is a Chrome extension that allows you to share your wildest ChatGPT conversations with one click.`,
+  title = `AIHub: 一键分享你创意创造过程`,
+  description = `AIHub 一个可以让你一键分享创意创造过程的浏览器插件`,
   image = "https://aihub.life/thumbnail.png",
   imageAlt = "OG image for the AIHub application",
   canonical = "https://aihub.life",

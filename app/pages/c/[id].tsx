@@ -33,7 +33,7 @@ function formatTitle(title: string | undefined): string {
 
 export default function ChatPage({
   id,
-  content: { title, avatarUrl, items, model },
+  content: { title, avatarUrl, items, model, role },
   comments: initialComments,
   views,
 }: ConversationProps) {
@@ -98,7 +98,7 @@ export default function ChatPage({
               height={28}
               className="rounded-sm mr-3 absolute left-4"
             />
-            这是我跟
+            这是我跟{role ? `【${role}】角色的` : ''}
             <Image
               className="mx-2 rounded-sm h-[14px]"
               alt="Avatar of the person chatting"

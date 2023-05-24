@@ -149,7 +149,11 @@ async function setRandomKey(
         id,
         title,
         avatar,
-        content,
+        content: {
+          items: content.items,
+          model: content.model,
+          role: content.role,
+        },
         ...(userId && { userId }),
       },
     });

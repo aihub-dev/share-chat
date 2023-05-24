@@ -5,6 +5,7 @@ export interface ConversationProps {
     title?: string;
     avatarUrl: string;
     model?: string;
+    role?: string;
     items: {
       from: "human" | "gpt";
       value: string;
