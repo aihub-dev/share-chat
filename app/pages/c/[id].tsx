@@ -89,6 +89,7 @@ export default function ChatPage({
             className="flex justify-center items-center bg-gray-100 dark:bg-[#434654] w-full text-center text-gray-500 dark:text-gray-300 p-3"
             href="https://aihub.life"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Image
               alt="AIHub logo"
