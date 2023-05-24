@@ -27,8 +27,8 @@ interface ChatParams extends ParsedUrlQuery {
 }
 function formatTitle(title: string | undefined): string {
   if (!title || title === "New chat")
-    return "Check out this AI and human conversation";
-  else return `${title} -  A AIHub conversation`;
+    return "瞅瞅这个人类和AI的对话吧";
+  else return `${title} -  AIHub 创意`;
 }
 
 export default function ChatPage({
